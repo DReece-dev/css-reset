@@ -1,0 +1,195 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    font-size: 1rem;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border: 1px solid currentColor;
+}
+
+button,
+input {
+    overflow: visible;
+    text-transform: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid;
+    opacity: 0.2;
+    height: 0;
+    overflow: visible;
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
+    font-size: 1em;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    appearance: button;
+}
+
+::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+    box-shadow: none;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type='search'] {
+    appearance: textfield;
+    outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+    appearance: none;
+}
+
+::-webkit-file-upload-button {
+    appearance: button;
+    font: inherit;
+}
+
+summary {
+    display: list-item;
+}
+
+[hidden] {
+    display: none;
+}
+
+:focus {
+    outline: 2px solid #4d90fe;
+    outline-offset: 2px;
+}
+
+::selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}

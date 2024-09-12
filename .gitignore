@@ -1,0 +1,28 @@
+# macOS system files
+.DS_Store
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Zed editor
+.zed/
+
+# Common backup files
+*.bak
+*.swp
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

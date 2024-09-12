@@ -1,33 +1,44 @@
+/* Base reset */
 :root {
-    box-sizing: border-box;
+    --primary-font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --monospace-font: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    --base-font-size: 16px;
+    --line-height: 1.5;
+    --focus-color: #4d90fe;
+    --selection-color: #b3d4fc;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* HTML and Body defaults */
 html {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
-        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    font-family: var(--primary-font);
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: var(--line-height);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #333;
+    background-color: #fff;
 }
 
+/* Media elements */
 img,
 picture,
 video,
@@ -35,12 +46,14 @@ canvas,
 svg {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 svg:not(:root) {
     overflow: hidden;
 }
 
+/* Form elements */
 input,
 button,
 textarea,
@@ -59,9 +72,14 @@ textarea {
 button,
 input {
     overflow: visible;
+}
+
+button,
+select {
     text-transform: none;
 }
 
+/* Typography */
 h1,
 h2,
 h3,
@@ -69,6 +87,7 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
+    line-height: 1.2;
 }
 
 a {
@@ -86,34 +105,11 @@ q {
     quotes: none;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid;
-    opacity: 0.2;
-    height: 0;
-    overflow: visible;
-}
-
-abbr[title] {
-    text-decoration: underline dotted;
-}
-
-b,
-strong {
-    font-weight: bolder;
-}
-
 pre,
 code,
 kbd,
 samp {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-        'Courier New', monospace;
+    font-family: var(--monospace-font);
     font-size: 1em;
 }
 
@@ -137,11 +133,48 @@ sup {
     top: -0.5em;
 }
 
+/* Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Horizontal rule */
+hr {
+    border: 0;
+    border-top: 1px solid;
+    opacity: 0.2;
+    margin: 1em 0;
+}
+
+/* Accessibility and usability */
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+::selection {
+    background-color: var(--selection-color);
+    text-shadow: none;
+}
+
+/* Form button styles */
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-    appearance: button;
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
 }
 
 ::-moz-focus-inner {
@@ -157,39 +190,49 @@ button,
     box-shadow: none;
 }
 
+/* Form input styles */
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
     height: auto;
 }
 
-[type='search'] {
-    appearance: textfield;
+[type="search"] {
+    -webkit-appearance: textfield;
     outline-offset: -2px;
 }
 
 ::-webkit-search-decoration {
-    appearance: none;
+    -webkit-appearance: none;
 }
 
 ::-webkit-file-upload-button {
-    appearance: button;
+    -webkit-appearance: button;
     font: inherit;
 }
 
+/* Misc elements */
 summary {
     display: list-item;
+    cursor: pointer;
 }
 
 [hidden] {
-    display: none;
+    display: none !important;
 }
 
-:focus {
-    outline: 2px solid #4d90fe;
-    outline-offset: 2px;
+/* Responsive typography */
+@media screen and (min-width: 768px) {
+    :root {
+        --base-font-size: 18px;
+    }
 }
 
-::selection {
-    background-color: #b3d4fc;
-    text-shadow: none;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
